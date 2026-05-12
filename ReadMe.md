@@ -66,8 +66,9 @@ drwxr-xr-x 1 Dim 197609    0 Apr 11 16:23 ../
 drwxr-xr-x 1 Dim 197609    0 Apr 13 20:26 .git/
 drwxr-xr-x 1 Dim 197609    0 Apr 11 15:30 Clone/
 -rw-r--r-- 1 Dim 197609 9612 Apr 13 20:26 ReadMe.md
-![Результат выполнения git init и ls -la](images/git-init.png)
 \`\`\`
+
+![Результат выполнения git init и ls -la](images/git-init.png)
 
 **`git status`**: Показывает текущее состояние репозитория (изменён или нет)
 \`\`\`bash
@@ -75,8 +76,10 @@ $ git status
 On branch master
 No commits yet
 nothing to commit (create/copy files and use "git add" to track)
-![Вывод git status](images/git-status.png)
 \`\`\`
+
+![Вывод git status](images/git-status.png)
+
 ### 2.2. Управление коммитами и логами
 
 **`git add .`**: Добавление всех файлов в индекс для создания коммитa
