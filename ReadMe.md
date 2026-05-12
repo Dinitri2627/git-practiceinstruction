@@ -33,6 +33,7 @@ Git — это программа, которая устанавливается
 $ git version
 git version 2.51.0.windows.1
 \`\`\`
+![Вывод git version в терминале](images/git-version.png)
 **Необходимо:** вам нужно ввести свои данные в Git, чтобы коммиты подписывались вашим именем.
 \`\`\`bash
 $ git config --global user.name "Имя"
