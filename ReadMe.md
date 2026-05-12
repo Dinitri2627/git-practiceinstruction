@@ -53,18 +53,18 @@ $ git config --global user.email "Почта@example.com"
 **`git init`**: Инициализирует новый репозиторий.
 \`\`\`bash
 $ git init
-Initialized empty Git repository in C:/Users/Diana/GitTestsDirectory/.git/
+Initialized empty Git repository in C:/Users/Dim/GitTestsDirectory/.git/
 \`\`\`
 Введите команду **`ls -la`**, чтобы удостовериться, что вы инициализировали репозиторий (Должна присутствовать папка .git).
 
 \`\`\` bash
 $ ls -la
 total 20
-drwxr-xr-x 1 Diana 197609    0 Apr 13 20:26 ./
-drwxr-xr-x 1 Diana 197609    0 Apr 11 16:23 ../
-drwxr-xr-x 1 Diana 197609    0 Apr 13 20:26 .git/
-drwxr-xr-x 1 Diana 197609    0 Apr 11 15:30 Clone/
--rw-r--r-- 1 Diana 197609 9612 Apr 13 20:26 ReadMe.md
+drwxr-xr-x 1 Dim 197609    0 Apr 13 20:26 ./
+drwxr-xr-x 1 Dim 197609    0 Apr 11 16:23 ../
+drwxr-xr-x 1 Dim 197609    0 Apr 13 20:26 .git/
+drwxr-xr-x 1 Dim 197609    0 Apr 11 15:30 Clone/
+-rw-r--r-- 1 Dim 197609 9612 Apr 13 20:26 ReadMe.md
 ![Результат выполнения git init и ls -la](images/git-init.png)
 \`\`\`
 
