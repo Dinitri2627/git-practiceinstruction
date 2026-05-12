@@ -36,6 +36,7 @@ git version 2.51.0.windows.1
 \`\`\`
 
 ![Вывод git version в терминале](images/git-version.png)
+
 **Необходимо:** вам нужно ввести свои данные в Git, чтобы коммиты подписывались вашим именем.
 \`\`\`bash
 $ git config --global user.name "Имя"
@@ -112,7 +113,9 @@ $git commit --amend -m "Исправлено"
 
 **`--oneline`**: Показывает коммиты в одну строку.
 **`--graph`**: Рисует граф веток.
+
 ![Пример git log с графом](images/git-log-graph.png)
+
 \`\`\`bash
 $ git log
 commit 7b309dd4da5b9bf97880eea6a4c564af61289d8f (HEAD -> local)
@@ -174,7 +177,9 @@ CONFLICT (content): Merge conflict in 123.txt
 Automatic merge failed; fix conflicts and then commit the result.
 \`\`\`
 Необходимо отредактировать файл и сделать коммит.
+
 ![Пример конфликта слияния](images/merge-conflict.png)
+
 **`git checkout <хэш_коммита>`**: Перемещает вас в прошлое, в состояние на момент указанного коммита
 
 \`\`\`bash
@@ -210,7 +215,9 @@ $git remote add origin https://github.com/YourUsername/git-guide-project.git
 $git push -u origin master
 \`\`\`
 **`git push --all origin`**: Отправляет все коммиты и ветки на удаленный сервер.
+
 ![Успешная отправка git push](images/git-push.png)
+
 \`\`\`bash
 git push --all origin
 \`\`\`
