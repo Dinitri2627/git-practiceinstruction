@@ -38,3 +38,149 @@ git version 2.51.0.windows.1
 $ git config --global user.name "Имя"
 $ git config --global user.email "Почта@example.com"
 \`\`\`
+## Глава 2: Работа с Локальным Репозиторием
+
+Здесь описаны базовые команды для работы с репозиторием на вашем компьютере.
+Для начала необходимо перейти в папку, где Вам необходимо инициализировать репозиторий.
+\`\`\`bash
+ $ cd "путь к папке"
+\`\`\`
+### 2.1. Инициализация и проверка статуса
+
+**`git init`**: Инициализирует новый репозиторий.
+\`\`\`bash
+$ git init
+Initialized empty Git repository in C:/Users/Diana/GitTestsDirectory/.git/
+\`\`\`
+Введите команду **`ls -la`**, чтобы удостовериться, что вы инициализировали репозиторий (Должна присутствовать папка .git).
+
+\`\`\` bash
+$ ls -la
+total 20
+drwxr-xr-x 1 Diana 197609    0 Apr 13 20:26 ./
+drwxr-xr-x 1 Diana 197609    0 Apr 11 16:23 ../
+drwxr-xr-x 1 Diana 197609    0 Apr 13 20:26 .git/
+drwxr-xr-x 1 Diana 197609    0 Apr 11 15:30 Clone/
+-rw-r--r-- 1 Diana 197609 9612 Apr 13 20:26 ReadMe.md
+\`\`\`
+
+**`git status`**: Показывает текущее состояние репозитория (изменён или нет)
+\`\`\`bash
+$ git status
+On branch master
+No commits yet
+nothing to commit (create/copy files and use "git add" to track)
+\`\`\`
+### 2.2. Управление коммитами и логами
+
+**`git add .`**: Добавление всех файлов в индекс для создания коммитa
+
+\`\`\`bash
+$ git add 123.txt
+\`\`\`
+
+**`git add <имя_файла>`**: Добавление конкретного файла в индекс для создания коммитa
+
+\`\`\`bash
+$ git status
+On branch master
+No commits yet
+nothing to commit (create/copy files and use "git add" to track)
+\`\`\`
+**`git reset <имя_файла>`**: Удаление конкретного файла из индекса
+
+\`\`\`bash
+$ git reset 123.txt
+\`\`\`
+**`git commit -m "Сообщение"`**: Сохраняет подготовленные файлы в историю
+
+\`\`\`bash
+$ git commit -m "My first commit"
+[master (root-commit) 9b76ea5] My first commit
+\`\`\`
+**`git commit --amend -m "Сообщение"`**: Изменение комментария у последнего коммита
+\`\`\`bash
+$git commit --amend -m "Исправлено"
+\`\`\`
+
+**`git log`**: Показывает историю коммитов. Для удобства можно использовать флаги:
+
+**`--oneline`**: Показывает коммиты в одну строку.
+**`--graph`**: Рисует граф веток.
+
+\`\`\`bash
+$ git log
+commit 7b309dd4da5b9bf97880eea6a4c564af61289d8f (HEAD -> local)
+Author: Ban049 <banyou049@gmail.com>
+Date:   Sat Apr 11 13:51:32 2026 +1000
+
+    Коммит 2: создание второй главы
+	
+$ git log --graph --oneline
+* 210586a (HEAD -> master) 5 commit (Master)
+|\
+| * b2abae6 (br_1) 1 commit (Br_1)
+| * e0bd27f Create commit (Br_1)
+* | 8639bc2 4 commit (Main)
+|/
+...
+\`\`\`
+
+**`git diff`**: Показывает разницу между последним коммитом и текущим состоянием
+\`\`\`bash
+$ git diff
+diff --git a/123.txt b/123.txt
+...
++Next message (master)
+\`\`\`
+### 2.3. Управление ветками
+
+**`git branch`**: Показывает список веток 
+
+\`\`\`bash
+$ git branch
+* local
+  master
+  \`\`\`
+
+**`git branch <имя_ветки>`**: Создает новую ветку
+
+\`\`\`bash
+$ git branch br_1
+\`\`\`
+
+**`git checkout <имя_ветки>`**: Переключается на другую ветку. Команда **`git switch <имя_ветки>`** делает то же самое
+
+\`\`\`bash
+$ git checkout br_1
+Switched to branch 'br_1'
+\`\`\`
+
+**`git merge <имя_ветки>`**: Вливает указанную ветку в текущую
+
+\`\`\`bash
+$ git merge Br_2
+\`\`\`
+При слиянии могут возникнуть конфликты:
+\`\`\`bash
+$ git merge br_1
+Auto-merging 123.txt
+CONFLICT (content): Merge conflict in 123.txt
+Automatic merge failed; fix conflicts and then commit the result.
+\`\`\`
+Необходимо отредактировать файл и сделать коммит.
+
+**`git checkout <хэш_коммита>`**: Перемещает вас в прошлое, в состояние на момент указанного коммита
+
+\`\`\`bash
+$ git checkout 8639bc2
+Note: switching to '8639bc2'.
+You are in 'detached HEAD' state.
+\`\`\`
+
+**`git checkout -b <имя_ветки>`**: Создает ветку из текущего положения и сразу переключается на нее. Команда **`git switch -с <имя_ветки>`** делает то же самое
+
+\`\`\`bash
+$ git checkout -b Br_2
+Switched to a new branch 'Br_2'
+\`\`\`
